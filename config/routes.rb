@@ -20,7 +20,8 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  # resources :posts do
-    # resources :comments
-  # end
+  resources :posts do
+    resources :comments
+    resources :likes
+  end
 end
