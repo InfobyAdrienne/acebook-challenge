@@ -1,6 +1,6 @@
 <h1>Hello, welcome to your feed</h1>
 
-Feed of everyone's posts <br> 
+Feed of everyones posts <br> 
 <ul>
 <div>
   <% @posts.each do |post| %>
@@ -24,7 +24,14 @@ Feed of everyone's posts <br>
     <% end %>
 </div>
   <% post.comments.map do |comment| %>
-    <p><%= comment.content %></p>
+    <% if comment.user.avatar.attached? %>
+    <%= image_tag(post.user.avatar.variant(
+      resize_to_limit: [100, 100])
+      )%>
+  <% else %>
+    <img class="avatar-index rounded-circle mx-auto" src="<%= "/images/default_user.png " %>" alt="Userimage">
+  <% end %>
+    <p><%= comment.user.first_name%> says <%= comment.content %></p>
   <% end %>
   <a href="comment?<%=post.id%>"> Create a new comment</a>
   <% end %>

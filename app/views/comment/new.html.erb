@@ -3,7 +3,8 @@
   <%= form.label :comment %>
   <%= form.text_field :content %>
   <%= form.text_field :post_id, value: request.url.partition('?')[2], class:'d-none' %>
-  
+  <%= form.text_field :user_id, value: Current.user.id%>
+
   <%= form.submit "Comment" %>
 <% end %>
 
