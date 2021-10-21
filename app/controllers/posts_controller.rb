@@ -17,14 +17,13 @@ class PostsController < ApplicationController
     else
       render :new
     end  
-    
-    #redirect_to sign_up_path
-
-
   end
 
   def index
     @posts = Post.newest_first
+    if Current.user == nil
+      redirect_to sign_in_path, notice: "You will need to log in before you can access the feed!"
+    end 
   end
 
   private
