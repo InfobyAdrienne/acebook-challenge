@@ -15,8 +15,9 @@
 
 
 
-<div class="container">
+ <div class="container">
   <% @posts.each do |post| %>
+ 
     <div class="row">
       <div class="col-sm-4">
         <div class="posts-index-img d-inline">
@@ -31,7 +32,6 @@
         <%= post.user.first_name%>
         <%= post.user.last_name%> <br>
         <p style="color:grey" ><%= distance_of_time_in_words(post.created_at, Time.now)%> ago</p>
-        
       </div>
 
       <div class="col-sm-8">
@@ -55,52 +55,56 @@
             <% thumbs_up_counter += 1 %>
           <% end %>
         <% end %>
-        <% if post.likes.count >= 1 %>
-          <div class="col">
-            <div class="emoji_horizontal"><%= button_to "👍 #{thumbs_up_counter}", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'like' }%></div>
-            <div class="emoji_horizontal"><%= button_to "😂 #{laugh_counter}", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'laugh' } %></div>
-            <div class="emoji_horizontal"><%= button_to "🔥 #{fire_counter}", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'fire' } %></div>
+        
+        <div>
+          <% if post.likes.count >= 1 %>
+          <div class="row justify-content-center">
+            <div class="col-2"><%= button_to "👍 #{thumbs_up_counter}", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'like' }%></div>
+            <div class="col-2"><%= button_to "😂 #{laugh_counter}", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'laugh' } %></div>
+            <div class="col-2"><%= button_to "🔥 #{fire_counter}", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'fire' } %></div>
           </div>
-        <% else %>
-          <div class="col">
-            <div class="emoji_horizontal"><%= button_to "👍", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'like' }%></div>
-            <div class="emoji_horizontal"><%= button_to "😂", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'laugh' } %></div>
-            <div class="emoji_horizontal"><%= button_to "🔥", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'fire' } %></div>
+          <% else %>
+          <div class="row justify-content-center">
+            <div class="col-2"><%= button_to "👍", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'like' }%></div>
+            <div class="col-2"><%= button_to "😂", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'laugh' } %></div>
+            <div class="col-2"><%= button_to "🔥", post_likes_path(post), method: :post, class: "emoji-button", params: { :react_type => 'fire' } %></div>
           </div>
-        <% end %>
-    </div>
+          <% end %>
+        </div>
+      
 
 
 
           <div id="comment-button">
             <a href="comment?<%=post.id%>"> Comment on this post 💬</a>
-          
+          </div>
+
           <div class="row" >
             <% post.comments.map do |comment| %>
+            <div class="col-sm-3">
               <% if comment.user.avatar.attached? %>
-              <div class ="col">
                   <%= image_tag(comment.user.avatar.variant(
                   resize_to_limit: [100, 100])
                   )%>
-                  <% else %>
+              <% else %>
                   <img class="avatar-index rounded-circle mx-auto" src="<%= "/images/default_user.png " %>" alt="Userimage">
               <% end %>
-              </div>
-              <div class="col">
-              <p id="comments-row"> <strong><%= comment.user.first_name%></strong> says <%= comment.content %> <br> <sub style="color:grey" ><%= distance_of_time_in_words(comment.created_at, Time.now)%> ago</sub></p>
-            <% end %>
             </div>
+            <div class="col-sm-9">
+              <p id="comments-row"> <strong><%= comment.user.first_name%></strong> says <%= comment.content %> <br> <sub style="color:grey" ><%= distance_of_time_in_words(comment.created_at, Time.now)%> ago</sub></p> <br>
+            </div>
+            <% end %>
           </div>
-          </div>
-      </div>
 
+        </div>
+      </div>
+      <div class="space-div"> </div>
+     <% end %>
     </div>
-  <% end %>
-  
+    
 </div>
 
-
-
+ 
 
 
 

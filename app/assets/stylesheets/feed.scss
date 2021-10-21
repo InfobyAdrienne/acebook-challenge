@@ -9,7 +9,7 @@
   padding: 2px;
   border: antiquewhite;
   border-color: rgb(179, 176, 173);
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(211, 210, 210);
   border-radius: 4px;
 }
 
@@ -24,7 +24,7 @@ a:link, a:visited {
   background-color: rgb(241, 241, 241);
   border-radius: 4px;
   color: black;
-  border: 2px solid rgb(11, 84, 151);
+  
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -32,15 +32,56 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-  background-color: rgb(11, 84, 151);
-  color: white;
+  background-color: rgb(211, 210, 210);
+  color: black;
 }
 
 .row{
-  padding: 15px 
+  flex: auto;
+  padding: 15px;
+  background-color: rgb(244, 246, 247);
+  border-radius: 4px;
 }
 
 #user-post{
   border: 2px solid rgba(133, 161, 187, 0.349);
   text-align: center;
+}
+
+
+
+.emoji-button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.emoji_horizontal {
+  transition: transform 0.2s;
+  width: 100%
+}
+
+
+.reacts {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1.5em;
+  transition: transform 0.2s;
+}
+
+.emoji-fire,
+.likes-counter {
+  display: inline-block;
+}
+
+.button_to{
+  width: 50%
+}
+
+.space-div{
+  width: 100%;
+  padding: 15px;
 }

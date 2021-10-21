@@ -1,4 +1,9 @@
+<%= stylesheet_link_tag  'feed', media: 'all' %>
+
 <h1>Sign up</h1>
+
+<div class="form">
+
 
 <%= form_with model: @user, url: sign_up_path, local: true do |form| %>
   <% if @user.errors.any? %>
@@ -38,3 +43,4 @@
 
 <% end %>
 
+</div>
