@@ -1,11 +1,11 @@
-<%= stylesheet_link_tag    'new_post', media: 'all' %>
-
+<%= stylesheet_link_tag 'new_post', media: 'all' %>
 
 <div class='post-form'>
 
 <h5>As a quick reminder 🙃 <%=@post.user.first_name%> posted</h5>
 <h5> "<%=@post.message%>"</h5>
 
+<body class="new-post-background">
   <%= form_with model: @comment, url: comment_path, local: true do |form| %>
 
   <div class="post-message">
@@ -14,13 +14,16 @@
   <div class="post-message">
     <%= form.text_area :content, class:'text_field'%>
   </div>
+
+    <%= form.submit "Comment" %>
+    
   <div class="post-message">
     <%= form.text_field :post_id, value: @post_id, class:'d-none' %>
   </div>
+  
   <div class="post-message">
     <%= form.text_field :user_id, value: Current.user.id, class:'d-none' %>
   </div>
-    <%= form.submit "Comment" %>
   <% end %>
-
+  </body>
 </div>

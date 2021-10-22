@@ -1,3 +1,41 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.body{
+  background-image: url(https://images.unsplash.com/photo-1538947151057-dfe933d688d1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJsdWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);
+  background-size: cover;
+}
+
+h1 {
+  color: whitesmoke;
+  font-family: Andale Mono, monospace;
+  word-spacing: -10px;
+  font-size: 50px;
+  font-weight: bold;
+  padding-bottom: 3px;
+}
+.mb-3 {
+  color: whitesmoke;
+  font-family: Andale Mono, monospace;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 60px;
+}
+
+.profile-picture {
+  color: whitesmoke;
+  font-weight: bold;
+  font-family: Andale Mono, monospace;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3px;
+  width: 300px;
+  height: 60px;
+}
+
+.form{
+  padding-top: 5px;
+}

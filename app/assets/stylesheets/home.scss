@@ -1,23 +1,29 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-body {
-  background-color: white;
-  
+
+.homepage-background {
+  background-image: url(https://images.unsplash.com/photo-1538947151057-dfe933d688d1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJsdWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);
+  background-size: cover;
 }
 
 div {
-  text-align : center;
+  text-align: center;
 }
 
 h1 {
-  padding : 16px;
-
+  color: whitesmoke;
+  font-family: Andale Mono, monospace;
+  word-spacing: -10px;
+  font-size: 100px;
+  font-weight: bold;
+  padding-bottom: 10px;
 }
 
- input[type=submit]{
-  background-color: #2109ac;
-  border-radius: 4px;
+input[type="submit"] {
+  background-color: #1b4965;
+  font-family: Andale Mono, monospace;
+  border-radius: 20px;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -26,9 +32,10 @@ h1 {
   cursor: pointer;
 }
 
-input[type=submit]:hover{
+input[type="submit"]:hover {
   background-color: #0c4fb4;
-  border-radius: 4px;
+  font-family: Andale Mono, monospace;
+  border-radius: 20px;
   border: none;
   color: white;
   padding: 16px 32px;

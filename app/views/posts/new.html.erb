@@ -1,7 +1,8 @@
-<%= stylesheet_link_tag    'new_post', media: 'all' %>
+<%= stylesheet_link_tag 'new_post', media: 'all' %>
 
 <h1> Write new post below! </h1>
 
+<body class="new-post-background">
 <div class="post-form">
 
 <%= form_with model: @post, url: new_post_path, local: true do |form| %>
@@ -10,16 +11,20 @@
     <%= form.text_area :message, class:'text_field'%>
   </div>
   
-  <div class="post-message">
+  <div class="post-message-image">
   <%= form.file_field :image, class:"form-control-file" %><br>
   </div>
-  <div class="post-message">
-    <%= form.text_field :user_id, value: Current.user.id, class:'d-none'%>
-  </div>
   
-  <div class="post-message-button">
+  
+  <div class="post-message-button pt-3">
   <%= form.submit "Submit"%>
   </div>
+
+<div class="post-message">
+    <%= form.text_field :user_id, value: Current.user.id, class:'d-none'%>
+  </div>
+
 <% end %>
 
 <div>
+</body>

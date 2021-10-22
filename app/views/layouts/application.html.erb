@@ -15,8 +15,7 @@
   <nav class="navbar navbar-light bg-light d-flex">
     <div class="container">
       <div class="logo">
-        <a class="navbar-brand" href="#">
-        
+        <a class="navbar-brand" href="<%= root_path %>">
           Acebook
         </a>
       </div>
@@ -35,11 +34,10 @@
         <a href="<%= logout_path %>" data-method="delete">
         <i class="fa fa-sign-out"></i></a>
 <!--Home page-->
-        <a href="<%= posts_path %>"> <i class="fa fa-home"></i></a
+        <a href="<%= posts_path %>"> <i class="fa fa-home"></i></a>
       </div>
     </div>
   </nav>
-
 
   <p class="notice" text-align="center"><%= notice %></p>
   <p class="alert" text-align="center"><%= alert %></p>

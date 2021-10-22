@@ -1,19 +1,19 @@
 <%= stylesheet_link_tag  'feed', media: 'all' %>
 
-<div class='new-post-button'>
+<h1 class="welcome-message">Hello <%=Current.user.first_name%> 👋 Welcome to your feed</h1> <br>
+
+<body class="feed-background">
+
+<div class='new-post'>
+
+<a href='/new_post'>Create a new post</a>
+
+<!--
   <%= link_to new_post_path, class: "btn btn-secondary" do %>
     New post?
   <% end %>  <br>
-  <!--
-  <div>
-    <%= button_to 'Logout', logout_path, method: :delete %>
-  </div>
   -->
 </div>
-
-<h1>Hello <%=Current.user.first_name%> 👋 Welcome to your feed</h1> <br><br><br>
-
-
 
  <div class="container">
   <% @posts.each do |post| %>
@@ -103,6 +103,7 @@
     </div>
     
 </div>
+</body>
 
  
 

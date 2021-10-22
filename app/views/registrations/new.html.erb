@@ -1,9 +1,8 @@
-<%= stylesheet_link_tag  'feed', media: 'all' %>
+<%= stylesheet_link_tag 'user', media: 'all' %>
 
 <h1>Sign up</h1>
-
+<body class="body">
 <div class="form">
-
 
 <%= form_with model: @user, url: sign_up_path, local: true do |form| %>
   <% if @user.errors.any? %>
@@ -34,13 +33,16 @@
     <%= form.password_field :password, class:'form-control', placeholder:"password" %>
   </div>
 
-  <%= form.label "Profile photo" %>
-  <%= form.file_field :avatar %><br>
+  <div class="profile-picture pt-2">
+      <%= form.label "Profile photo" %>
+      <%= form.file_field :avatar %>
+  </div>
 
-  <div class='mb-3'>
+  <div class='mb-3 pt-3'>
     <%= form.submit "Sign Up", class:'btn btn-primary' %>
   </div>
 
 <% end %>
 
 </div>
+</body>

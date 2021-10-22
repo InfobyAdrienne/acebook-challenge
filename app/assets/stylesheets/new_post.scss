@@ -2,15 +2,31 @@
   text-align : center;
 }
 
+.new-post-background {
+  background-color: #ADE8F4;
+}
+
 h1{
   text-align : center;
+  color: black;
 }
 
 .post-message {
   padding : 16px;
   margin-left :auto;
   margin-right:auto;
+  font-family: Andale Mono, monospace;
+}
 
+.post-message-image {
+  color: black;
+  font-weight: bold;
+  font-family: Andale Mono, monospace;
+  padding : 16px;
+  margin-left :auto;
+  margin-right:auto;
+  width: 300px;
+  height: 60px;
 }
 
 .post-message-file-upload{
@@ -27,12 +43,10 @@ h1{
   box-sizing: border-box;
 }
 
-h4{
+
+h5{
   text-align : center;
+  font-family: Andale Mono, monospace;
   margin: auto;
   padding: 10px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  margin-right: 150px;
-  margin-left: 80px;
 }
