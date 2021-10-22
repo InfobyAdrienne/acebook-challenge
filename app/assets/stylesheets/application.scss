@@ -19,9 +19,15 @@
 .container{
   max-width: 1000px;
 }
+
 .navbar{
   border-bottom: 1px solid rgba(0,0,0,.0975);
 }
+
+.navbar-brand {
+  font-family: Andale Mono, monospace;
+}
+
 .user-section{
   a{
     padding-left: 15px;
@@ -39,7 +45,7 @@
 }
 .footer{
   font-size: 12px;
-  padding-top: 30px;
+  padding-top: 0px;
   position: fixed;
   bottom: 0;
 
@@ -55,4 +61,15 @@
   p{
     color: #999;
   }
+}
+
+
+.notice {
+  text-align: center;
+  color: whitesmoke;
+  font-family: Andale Mono, monospace;
+}
+
+.alert{
+  text-align: center;
 }

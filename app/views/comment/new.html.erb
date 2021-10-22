@@ -1,10 +1,29 @@
-<%= form_with model: @comment, url: comment_path, local: true do |form| %>
+<%= stylesheet_link_tag 'new_post', media: 'all' %>
 
-  <%= form.label :comment %>
-  <%= form.text_field :content %>
-  <%= form.text_field :post_id, value: request.url.partition('?')[2], class:'d-none' %>
-  <%= form.text_field :user_id, value: Current.user.id%>
+<div class='post-form'>
 
-  <%= form.submit "Comment" %>
-<% end %>
+<h5>As a quick reminder 🙃 <%=@post.user.first_name%> posted</h5>
+<h5> "<%=@post.message%>"</h5>
 
+<body class="new-post-background">
+  <%= form_with model: @comment, url: comment_path, local: true do |form| %>
+
+  <div class="post-message">
+    <% form.label :comment %> Type your comment below
+  </div>
+  <div class="post-message">
+    <%= form.text_area :content, class:'text_field'%>
+  </div>
+
+    <%= form.submit "Comment" %>
+    
+  <div class="post-message">
+    <%= form.text_field :post_id, value: @post_id, class:'d-none' %>
+  </div>
+  
+  <div class="post-message">
+    <%= form.text_field :user_id, value: Current.user.id, class:'d-none' %>
+  </div>
+  <% end %>
+  </body>
+</div>

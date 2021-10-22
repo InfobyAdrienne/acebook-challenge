@@ -4,6 +4,8 @@ class CommentController < ApplicationController
 
   def new 
     @comment = Comment.new
+    @post_id = request.url.partition('?')[2]
+    @post = Post.find(@post_id)
   end
 
   def create 

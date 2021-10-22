@@ -1,10 +1,12 @@
-<h1>Welcome to Acebook!</h1>
+<%= stylesheet_link_tag 'home', media: 'all' %>
+<h1>Acebook</h1>
 
+<div>
+<body class="homepage-background">
 <form method="get" action='/sign_up'><input type="submit" value="Sign up"></form>
 
 <form method="get" action='/sign_in'> <input type="submit" value="Login">
 </form>
+</body>
 
-<%# <button type="button" method="post" action='/new'>Sign up</button> %>
-<%# 
-<button type="button" method="post" action='/login'>Login</button> %>
+</div>
